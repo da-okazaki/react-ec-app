@@ -8,7 +8,7 @@ test:
 
 deployment:
   production:
-    branch: develop
+    branch: master
     commands:
       - firebase deploy --token=$(FIREBASE_TOKEN)
       - echo Build
