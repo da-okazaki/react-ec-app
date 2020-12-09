@@ -11,11 +11,11 @@ jobs:
       - run:
           name: build
           command: yarn build
+          env:
+            CI: false
       - run:
           name: deploy to Firebase Hosting
           command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN # プロジェクト上のfirebase-toolsでデプロイします
-      - env:
-          CI: false
 
 workflows:
   version: 2
