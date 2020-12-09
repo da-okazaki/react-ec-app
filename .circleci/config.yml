@@ -6,11 +6,13 @@ jobs:
     steps:
       - checkout # ソースコードのチェックアウト
       - run: # 順に実行したいコマンドとコマンドに名前をつけます
-          name: yarn install
+          name: install
           command: yarn install
       - run:
           name: build
           command: yarn build
+          env:
+            CI: ""
       - run:
           name: deploy to Firebase Hosting
           command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN # プロジェクト上のfirebase-toolsでデプロイします
