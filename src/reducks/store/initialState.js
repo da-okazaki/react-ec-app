@@ -1,9 +1,9 @@
 const initialState = {
   users: {
-    icon: "",
     isSignedIn: false,
+    role: "",
     uid: "",
-    username: ""
-  }
+    username: "",
+  },
 };
 export default initialState;
