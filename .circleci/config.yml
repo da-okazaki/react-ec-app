@@ -1,8 +1,8 @@
-version: 2
+version: 2.1
 jobs:
   deploy_prod: # ジョブ名
     docker:
-      - image: circleci/node:10.7 # ジョブ実行環境のDockerイメージを記述
+      - image: circleci/node:10.16.3 # ジョブ実行環境のDockerイメージを記述
     steps:
       - checkout # ソースコードのチェックアウト
       - run: # 順に実行したいコマンドとコマンドに名前をつけます
@@ -22,4 +22,4 @@ workflows:
       - deploy_prod: # 上で定義したジョブを指定します
           filters:
             branches:
-              only: master # developブランチのみを実行対象とします
+              only: master # masterブランチのみを実行対象とします
